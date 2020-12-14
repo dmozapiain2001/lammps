@@ -1,0 +1,20 @@
+README for Neural Net Example
+
+These examples run the Ta06 example using the MLIAP package but the potential has been trained using a neural network with a single hidden layer.
+
+1: Running models using LAMMPS executable: in.mliap.snap.Ta06A.
+
+To run this, first run convert_network_2_mliappy.py, which will generate the neural network and populate it with the weights trained for 1000 epochs.
+
+It will be saved as "Ta06A.mliap.pytorch.model.pkl".
+
+It will also copy the "mliappy_pytorch.py" file into the current working directory.
+
+mliappy_pytorch.py contains class definitions suitable for wrapping an arbitrary energy model MLIAPPY. It must be available to python when
+creating or unpicking a pytorch model for MLIAPPY.
+
+From that point you can run the example ../../src/lmp -in in.mliap.snap.Ta06A -echo both
+
+You can also run it using LAMMPS in library mode with load_external.py
+
+In order to run this you need to have compiled lammps as a shared library and lammps.py should be avaialable on this directory to enable it to run. 
